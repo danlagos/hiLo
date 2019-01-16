@@ -1,0 +1,16 @@
+<h1>Game page</h1>
+
+<% if @number.nil?  %>
+  <h1>Please enter a number</h1>
+<% elsif @number.to_i.to_s !=@number%>
+  <h1 class ="flash-error"><%= flash[:error]%></h1>
+<% else %>
+  <h1>You picked <%= @number %> </h1>
+  <h1> <%= @display %></h1>
+<% end %>
+<hr />
+
+<form action="home" method="get">
+  <input type="text" name="number"/>
+  <input type="submit" value="Submit Number"/>
+</form>
